@@ -18,7 +18,14 @@ class _MyHomePageState extends ConsumerState<StateProviderTut> {
     print(value);
     return Scaffold(
       appBar: AppBar(
-
+        actions: [
+          IconButton(
+              onPressed: (){
+                ref.read(counter.notifier).update((state) => state = 0);
+              },
+              icon: Icon(Icons.refresh)
+          )
+        ],
         title: Text(widget.title),
       ),
       body: Center(
